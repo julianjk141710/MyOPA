@@ -122,6 +122,18 @@ public class OPAHandler {
                 printRE();
                 exit(0);
             }
+        } else if (character == ')') {
+            if (leftStack[index - 1] == 'N' && leftStack[index - 2] == '(') {
+                setEmpty(leftStackPointer);
+                decreaseLeftPointer();
+                setEmpty(leftStackPointer);
+                decreaseLeftPointer();
+                leftStack[leftStackPointer] = 'N';
+                printR();
+            } else {
+                printRE();
+                exit(0);
+            }
         }
     }
 
@@ -166,7 +178,7 @@ public class OPAHandler {
 
             int compareResult = comparePriority(leftStack[tmpLeftStackPointer], rightStack[rightStackPointer]);
 
-            if (compareResult == -1) {
+            if (compareResult == -1 || compareResult == 0) {
                 moveToLeftStack();
             } else if (compareResult == 1) {
                 reduce(leftStack[tmpLeftStackPointer], tmpLeftStackPointer);
