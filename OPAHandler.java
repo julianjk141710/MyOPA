@@ -38,9 +38,21 @@ public class OPAHandler {
      * @return
      */
     public int comparePriority(char first, char second) {
-        int firstIndex = indexMap.get(first);
-        int secondIndex = indexMap.get(second);
-        return matrix[firstIndex][secondIndex];
+        int firstIndex = 7;
+        int secondIndex = 7;
+        if (indexMap.get(first) != null) {
+            firstIndex = indexMap.get(first);
+        }
+        if (indexMap.get(second) != null) {
+            secondIndex = indexMap.get(second);
+        }
+        if (firstIndex <= 6 && secondIndex <= 6) {
+            return matrix[firstIndex][secondIndex];
+        } else {
+            printE();
+            exit(0);
+        }
+        return 0;
     }
 
     public void decreaseLeftPointer() {
@@ -71,6 +83,10 @@ public class OPAHandler {
         int i = 0;
         increaseRightPointer();
         for (i = 0; i < sentence.length(); i ++) {
+//            if (Character.isLetter(sentence.charAt(i))) {
+//                rightStack[i] = 'i';
+//                continue;
+//            }
             rightStack[i] = sentence.charAt(i);
         }
         rightStack[i] = '#';
