@@ -11,7 +11,8 @@ public class PriorityMatrix {
         priorityMatrix[1] = new int[]{0, 1, -1, -1, -1, 1, 1};
         priorityMatrix[2] = new int[]{0, 1, 1, -1, -1, 1, 1};
         priorityMatrix[3] = new int[]{0, 1, 1, impossible, impossible, 1, 1};
-        priorityMatrix[4] = new int[]{0, -1, -1, -1, -1, 0, impossible};
+//        priorityMatrix[4] = new int[]{0, -1, -1, -1, -1, 0, impossible};
+        priorityMatrix[4] = new int[]{0, -1, -1, -1, -1, 0, 1};
         priorityMatrix[5] = new int[]{0, 1, 1, impossible, impossible, 1, 1};
         priorityMatrix[6] = new int[]{0, -1, -1, -1, -1, impossible, impossible};
     }

@@ -134,6 +134,9 @@ public class OPAHandler {
                 printRE();
                 exit(0);
             }
+        } else if (character == '(') {
+            printRE();
+            exit(0);
         }
     }
 
