@@ -100,7 +100,9 @@ public class OPAHandler {
             printR();
         } else if (character == '+') {
             if (leftStack[index - 1] == 'N' && leftStack[index + 1] == 'N') {
+                setEmpty(leftStackPointer);
                 decreaseLeftPointer();
+                setEmpty(leftStackPointer);
                 decreaseLeftPointer();
                 leftStack[leftStackPointer] = 'N';
                 printR();
@@ -110,7 +112,9 @@ public class OPAHandler {
             }
         } else if (character == '*') {
             if (leftStack[index - 1] == 'N' && leftStack[index + 1] == 'N') {
+                setEmpty(leftStackPointer);
                 decreaseLeftPointer();
+                setEmpty(leftStackPointer);
                 decreaseLeftPointer();
                 leftStack[leftStackPointer] = 'N';
                 printR();
@@ -138,6 +142,10 @@ public class OPAHandler {
 
     public void printE() {
         System.out.println("E");
+    }
+
+    public void setEmpty(int index) {
+        leftStack[index] = '\u0000';
     }
 
     public void opaHandler() {

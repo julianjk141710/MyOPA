@@ -21,12 +21,11 @@ public class OPATest {
     }
     public static void main(String[] args) {
         OPATest opaTest = new OPATest();
-//        String pathName = "/Users/apple/Desktop/hello.txt";
+        //String pathName = "/Users/apple/Desktop/hello.txt";
         String pathName = args[0];
 
         String tmpSentence = opaTest.getSentence(pathName);
         //System.out.println(tmpSentence);
-        System.out.println(tmpSentence);
         OPAHandler opahandler = new OPAHandler(tmpSentence);
 
         opahandler.opaHandler();
